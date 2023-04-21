@@ -1,0 +1,37 @@
+<div class="Container center-div">
+  <h1 class="mat-h1">login</h1>
+  <form [formGroup]="Logindata" (ngSubmit)="onSubmit()">
+    <div class="flax-container formdiv">
+      <!-- email  -->
+
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput formControlName="email" type="email">
+        <mat-error
+          *ngIf="Logindata.controls['email'].invalid && (Logindata.controls['email'].errors||Logindata.controls['email'].touched)">
+          <span *ngIf="Logindata.controls['email'].errors?.['required']">Email is required.</span>
+          <span *ngIf="Logindata.controls['email'].errors?.['email']">Please enter a valid email
+            address.</span>
+        </mat-error>
+      </mat-form-field>
+      <!-- password  -->
+
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password">
+        <mat-error
+          *ngIf="Logindata.controls['password'].invalid && (Logindata.controls['password'].errors || Logindata.controls['password'].touched)">
+          <span *ngIf="Logindata.controls['password'].errors?.['required']">Password Required</span>
+          <span *ngIf="Logindata.controls['password'].errors?.['pattern']">
+            Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special
+            character.
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <button mat-raised-button color="primary" type="submit">Login</button>
+      <!-- registraion-link  -->
+
+      <a class="link" (click)="registration()">create an accounter</a>
+    </div>
+  </form>
+</div>

@@ -15,9 +15,16 @@ import { TaskDashboardComponent } from './View/DashBoard/task-dashboard/task-das
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { NavbarComponent } from './Components/Navbar/navbar/navbar.component';
 import { UserProfileComponent } from './Components/UserProfile/user-profile/user-profile.component';
-import { SideToolbarComponent } from './Components/Sidevarbar/side-toolbar/side-toolbar.component';
 import { AddtaskComponent } from './Components/AddTask/addtask/addtask.component';
-
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import {MatDialogModule} from '@angular/material/dialog';
+import { MatSelectModule } from '@angular/material/select';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
+import {MatRadioModule} from '@angular/material/radio';
+import { AllTaskComponent } from './Components/AllTask/all-task/all-task.component';
+import {MatCardModule} from '@angular/material/card';
 @NgModule({
   declarations: [
     AppComponent,
@@ -27,8 +34,8 @@ import { AddtaskComponent } from './Components/AddTask/addtask/addtask.component
     TaskDashboardComponent,
     NavbarComponent,
     UserProfileComponent,
-    SideToolbarComponent,
-    AddtaskComponent
+    AddtaskComponent,
+    AllTaskComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,10 +43,10 @@ import { AddtaskComponent } from './Components/AddTask/addtask/addtask.component
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule,
-    FormsModule,
-    ReactiveFormsModule,
-    HttpClientModule,MatToolbarModule
+    MatIconModule,MatCardModule,
+    FormsModule,MatNativeDateModule,
+    ReactiveFormsModule,MatSelectModule,MatRadioModule,
+    HttpClientModule,MatToolbarModule,MatSidenavModule,MatListModule,MatDialogModule,MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

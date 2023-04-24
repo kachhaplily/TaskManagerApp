@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(201, 201, 201);
+  background: rgb(199, 199, 199);
   /* background: linear-gradient(0deg, rgba(8, 8, 8, 0.816), rgba(3, 3, 3, 0.3)), url('https://images.unsplash.com/photo-1652449823136-b279fbe5dfd3?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=725&q=80'); */
   background-attachment: fixed;
   background-size: cover;

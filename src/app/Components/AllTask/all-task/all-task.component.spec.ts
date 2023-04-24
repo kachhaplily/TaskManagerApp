@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SideToolbarComponent } from './side-toolbar.component';
+import { AllTaskComponent } from './all-task.component';
 
-describe('SideToolbarComponent', () => {
-  let component: SideToolbarComponent;
-  let fixture: ComponentFixture<SideToolbarComponent>;
+describe('AllTaskComponent', () => {
+  let component: AllTaskComponent;
+  let fixture: ComponentFixture<AllTaskComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SideToolbarComponent ]
+      declarations: [ AllTaskComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SideToolbarComponent);
+    fixture = TestBed.createComponent(AllTaskComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

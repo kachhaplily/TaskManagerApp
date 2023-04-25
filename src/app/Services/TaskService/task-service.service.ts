@@ -18,6 +18,7 @@ export class TaskServiceService {
       return this._refreshrequired;
     }
 
+    // addtask
 
     addTask(data: any): Observable<any>
     {
@@ -41,9 +42,23 @@ export class TaskServiceService {
         .set('Content-Type', 'application/json')
         .set('Accept', 'application/json')
         .set('Authorization', `bearer ${this.token}`);
-      return this.http.get<any>(`https://localhost:7070/api/Task/task/${this.userid}`,{ headers: headers });
+      return this.http.get<any>(`https://localhost:7070/api/Task/task/${this.userid}`,{ headers: headers })
+      ;
     }
 
 
+    // delete task
+    removeTask(taskid:number):Observable<any>
+    {
+      const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Accept', 'application/json')
+      .set('Authorization', `bearer ${this.token}`);
+    return this.http.delete<any>(`https://localhost:7070/api/Task/${this.userid}/tasks/${taskid}`,{ headers: headers }).pipe(
+      tap(()=>{
+        this.Refeshrequired.next();
+      })
+    );
+    }
 
 }

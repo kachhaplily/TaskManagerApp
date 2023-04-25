@@ -1,17 +1,18 @@
 .container {
   display: flex;
   flex-wrap: wrap;
+  background: rgb(252, 252, 252);
 }
 
 .left-side {
   flex: 1;
-  padding: 20px;
+  padding: 10px;
   /* Add any other styles for the left side here */
 }
 
 .right-side {
   flex: 3;
-  padding: 20px;
+  padding: 10px;
   /* Add any other styles for the right side here */
 }
 

@@ -15,7 +15,7 @@ export class AddtaskComponent {
     { value: 'High', label: 'High' }
   ];
   taskStatus: string[] = ['Todo', 'inProgress', 'Completed'];
-  formVisible = true;
+  formVisible = false;
 
   AddTask!: FormGroup;
   constructor(private formBuilder: FormBuilder, private taskservice: TaskServiceService,) {
@@ -30,10 +30,9 @@ export class AddtaskComponent {
   }
   onSubmit() {
     if (this.AddTask.valid) {
-      this.taskservice.addTask(this.AddTask.value).subscribe(y => console.log(y))
-      console.log(this.AddTask.value)
-      this.AddTask.reset();
 
+      this.taskservice.addTask(this.AddTask.value).subscribe(y => console.log(y))
+      this.AddTask.reset();
     }
   }
   toggleForm() {

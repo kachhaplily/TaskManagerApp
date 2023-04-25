@@ -25,6 +25,11 @@ import { MatNativeDateModule } from '@angular/material/core';
 import {MatRadioModule} from '@angular/material/radio';
 import { AllTaskComponent } from './Components/AllTask/all-task/all-task.component';
 import {MatCardModule} from '@angular/material/card';
+import { CapitalizePipe } from './Pipes/Capital/capitalize.pipe';
+import { MatMenuModule } from '@angular/material/menu';
+import { SearchbarComponent } from './Components/SearchBar/searchbar/searchbar.component';
+import { CardComponent } from './Components/CardTask/card/card.component';
+import { SearchTaskPipe } from './Pipes/search/search-task.pipe';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,6 +41,10 @@ import {MatCardModule} from '@angular/material/card';
     UserProfileComponent,
     AddtaskComponent,
     AllTaskComponent,
+    CapitalizePipe,
+    SearchbarComponent,
+    CardComponent,
+    SearchTaskPipe,
   ],
   imports: [
     BrowserModule,
@@ -44,7 +53,7 @@ import {MatCardModule} from '@angular/material/card';
     MatInputModule,
     MatButtonModule,
     MatIconModule,MatCardModule,
-    FormsModule,MatNativeDateModule,
+    FormsModule,MatNativeDateModule,MatMenuModule,
     ReactiveFormsModule,MatSelectModule,MatRadioModule,
     HttpClientModule,MatToolbarModule,MatSidenavModule,MatListModule,MatDialogModule,MatDatepickerModule
   ],

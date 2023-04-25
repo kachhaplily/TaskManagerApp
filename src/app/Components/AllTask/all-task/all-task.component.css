@@ -1,48 +1,27 @@
-.example-card {
-  width: 500px;
 
-}
 .alltask{
   display: flex;
   align-items: center;
-  flex-direction: row-reverse;
+  flex-direction: row;
   justify-content: center;
-  background: rgb(235, 232, 232);
+  background: rgb(231, 230, 230);
   flex-wrap: wrap;
   gap: 10px;
-  height: 80vh;
+  height: 75vh;
   overflow: auto;
+  padding: 2px;
+}
+.example-card {
+  padding: 12px;
+  width: 300px;
+    margin-bottom: auto;
+    color: #0f0f0f;
+    background: #f0fdff;
+    border-radius: 20px;
 
-}
-/* styles.css */
-.red-icon {
-  color: rgb(88, 0, 0);
-}
+  }
 
-.blue-icon {
-  color: rgb(1, 73, 17);
-}
-mat-card-title{
-  font-size: 30px;
-  font-weight: 500;
-}
 
-.circle{
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  margin: 2px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
-.priorty{
-  display: flex;
-  align-items: center;
-}
-.date{
-  display: flex;
-  align-items: center;
-  padding: 5px;
-}
-mat-icon-button{
-  background-color: pink;
-}
+
+
+

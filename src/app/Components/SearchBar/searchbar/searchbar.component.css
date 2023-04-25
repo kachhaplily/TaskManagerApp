@@ -1,0 +1,25 @@
+.searchbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+
+}
+
+.search {
+  flex: 1;
+  padding: 4px 0;
+}
+.search mat-form-field{
+  display: block;
+  width: 30vw;
+  padding: 12px 0;
+}
+
+.dropdown {
+  flex: 1;
+}
+.dropdown mat-form-field {
+ display: block;
+}

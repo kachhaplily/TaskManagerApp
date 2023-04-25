@@ -1,4 +1,5 @@
-import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { SortingService } from 'src/app/Services/Sorting/sorting.service';
 import { TaskServiceService } from 'src/app/Services/TaskService/task-service.service';
 
 @Component({
@@ -8,7 +9,9 @@ import { TaskServiceService } from 'src/app/Services/TaskService/task-service.se
 })
 export class AllTaskComponent implements OnInit {
   alltask!: any[]
-  constructor(private taskservice: TaskServiceService, private cdr: ChangeDetectorRef) { }
+  SearchText!: string;
+
+  constructor(private taskservice: TaskServiceService, private sortingservice: SortingService) { }
   ngOnInit(): void {
     this.getdata()
     this.taskservice.Refeshrequired.subscribe(response => this.getdata());
@@ -17,18 +20,30 @@ export class AllTaskComponent implements OnInit {
   getdata() {
     this.taskservice.getTask().subscribe(data => {
       this.alltask = data
+      this.alltask = this.alltask.reverse();
     })
-    this.alltask.sort((a, b) => this.alltask.indexOf(b) - this.alltask.indexOf(a));
   }
-  getColor(priority: string): string {
-    if (priority === 'Low') {
-      return 'blue';
-    } else if (priority === 'High') {
-      return 'red';
-    } else {
-      return 'green';
-    }
+  // remove function
+  remove(Taskid: number) {
+    this.taskservice.removeTask(Taskid).subscribe(y => console.log(y));
+    this.taskservice.Refeshrequired.subscribe(response => this.getdata());
   }
+  handleSearch(searchText: string) {
+    this.SearchText = searchText;
+  }
+  onSortButtonClick() {
+    const sortedTasks = this.sortingservice.sortTasksByDueDate(this.alltask);
+    this.alltask=sortedTasks;
+  }
+  onOptionSelected(selectedOption: string){
+     this.sortingservice.sortTaskByPriority(this.alltask,selectedOption);
+  }
+  onDateSorting(selectiondate: string){
+    console.log(selectiondate)
+    this.sortingservice.sortTaskbyDate(this.alltask,selectiondate)
+
+  }
+
 }
 
 

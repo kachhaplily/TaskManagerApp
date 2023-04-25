@@ -1,0 +1,22 @@
+
+  <mat-card-header>
+    <mat-card-subtitle>{{Item.creationDate |date:'MMMM d, y' }}</mat-card-subtitle>
+    <mat-card-title>{{Item.title|capitalize}}</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <p>{{Item.description}}</p>
+    <div class="iconlabel">
+      <div [ngStyle]="{'background-color': getColor(Item.priority)}" class="circle"> </div>
+      <span>Priority {{Item.priority}}</span>
+    </div>
+    <div class="iconlabel">
+      <mat-icon>running_with_errors_sharp</mat-icon> <span>{{Item.dueDate |date:'MMMM d, y'}}</span>
+    </div>
+    <div class="iconlabel"><mat-icon>show_chart</mat-icon> <span>{{Item.status}}</span></div>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-icon-button class="remove" (click)="onRemove(Item.taskId)">
+      <mat-icon class="red-icon">close</mat-icon>
+    </button>
+  </mat-card-actions>
+

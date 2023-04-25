@@ -1,27 +1,12 @@
+<div>
+  <app-searchbar (search)="handleSearch($event)"
+  (sortButtonClick)="onSortButtonClick()"
+  (sortDropdown)="onOptionSelected($event)"
+  (sortDate)="onDateSorting($event)"/>
+</div>
+
 <div class="alltask">
-  <mat-card class="example-card" *ngFor="let item of alltask">
-    <mat-card-header>
-      <mat-card-title>{{item.title |uppercase}}</mat-card-title>
-    </mat-card-header>
-    <mat-card-content>
-      <p>{{item.description}}</p>
-      <div class="priorty">
-        <div [ngStyle]="{'background-color': getColor(item.priority)}" class="circle"> </div>
-        <span>{{item.priority}}</span>
-      </div>
-      <div class="date">
-        <div> <mat-icon>calendar_today</mat-icon>  <span>{{item.dueDate |date:'shortDate' }}</span> </div>
-        <div>  <mat-icon>timer</mat-icon> <span>{{item.creationDate  |date:'shortDate'}}</span></div>
-      </div>
-      <div><mat-icon>show_chart</mat-icon> <span>{{item.status}}</span></div>
-    </mat-card-content>
-    <mat-card-actions>
-      <button mat-icon-button>
-        <mat-icon class="red-icon ">deleteforever</mat-icon>
-      </button>
-      <button mat-icon-button>
-        <mat-icon class="blue-icon">edit</mat-icon>
-      </button>
-    </mat-card-actions>
+  <mat-card class="example-card" *ngFor="let item of alltask |searchTask:SearchText">
+    <app-card  [Item]="item" (remove)="remove(item.taskId)"></app-card>
   </mat-card>
 </div>

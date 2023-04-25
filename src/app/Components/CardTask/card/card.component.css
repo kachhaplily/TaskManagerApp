@@ -1,0 +1,48 @@
+
+   mat-card-title{
+    font-size: 25px;
+    margin: .25rem 0 auto;
+    cursor: pointer;
+    letter-spacing: 2px;
+    font-family: 'Arial Black', sans-serif;
+
+  }
+
+  .red-icon {
+    font-weight: 600;
+    color: rgb(250, 0, 0);
+  }
+
+  .blue-icon {
+    color: rgb(1, 73, 17);
+  }
+  mat-card-title{
+    font-size: 30px;
+    font-weight: 500;
+  }
+
+  .circle{
+    height: 12px;
+    width: 12px;
+    border-radius: 50%;
+    margin: 2px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  }
+  .iconlabel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+  }
+  .date{
+    display: flex;
+    align-items: center;
+    padding: 5px;
+  }
+
+  .remove{
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+

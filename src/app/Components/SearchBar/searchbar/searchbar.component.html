@@ -1,0 +1,28 @@
+<div class="searchbar">
+<div class="search">
+  <mat-form-field appearance="fill">
+    <input matInput [(ngModel)]="searchQuery" (input)="handleSearchTextChange()" placeholder="Enter search">
+  </mat-form-field>
+</div>
+
+  <div class="dropdown">
+    <mat-form-field appearance="fill" [color]="colorControl.value!">
+    <mat-label>Date</mat-label>
+    <mat-select  [(ngModel)]="selectiondate" (selectionChange)="onDateSort($event)">
+      <mat-option value="dueDate">Due Date</mat-option>
+      <mat-option value="creationDate">Creation Date</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+
+  <div class="dropdown">
+    <mat-form-field appearance="fill" [color]="colorControl.value!">
+    <mat-label >Priority</mat-label>
+    <mat-select  [(ngModel)]="selectedOption" (selectionChange)="onSortSelect($event)">
+      <mat-option value="Low">Low</mat-option>
+      <mat-option value="Medium">Medium</mat-option>
+      <mat-option value="High">High</mat-option>
+    </mat-select>
+  </mat-form-field>
+  </div>
+</div>

@@ -2,6 +2,10 @@
 @include mat-core();
 $my-primary:mat-palette($mat-teal,500 );
 $my-accent:mat-palette($mat-cyan,500);
+$my-secondary: mat-palette($mat-pink, 500);
+$my-theme:mat-light-theme($my-primary,$my-accent,$my-secondary);
 
-$my-theme:mat-light-theme($my-primary,$my-accent);
 @include angular-material-theme($my-theme);
+
+
+

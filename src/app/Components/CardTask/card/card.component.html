@@ -1,4 +1,5 @@
 
+
   <mat-card-header>
     <mat-card-subtitle>{{Item.creationDate |date:'MMMM d, y' }}</mat-card-subtitle>
     <mat-card-title>{{Item.title|capitalize}}</mat-card-title>
@@ -17,6 +18,9 @@
   <mat-card-actions>
     <button mat-icon-button class="remove" (click)="onRemove(Item.taskId)">
       <mat-icon class="red-icon">close</mat-icon>
+    </button>
+    <button mat-button class="edit" (click)="onEdit(Item.taskId)">
+          Edit
     </button>
   </mat-card-actions>
 

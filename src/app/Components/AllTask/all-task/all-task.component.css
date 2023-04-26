@@ -1,24 +1,24 @@
 
 .alltask{
+  max-width: 1500px;
+  margin: auto;
   display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: center;
-  background: rgb(231, 230, 230);
   flex-wrap: wrap;
-  gap: 10px;
-  height: 75vh;
-  overflow: auto;
-  padding: 2px;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  height: 72vh;
+  overflow-y: scroll;
 }
 .example-card {
-  padding: 12px;
-  width: 300px;
-    margin-bottom: auto;
-    color: #0f0f0f;
-    background: #f0fdff;
-    border-radius: 20px;
-
+  flex: 0 0 calc(25% - 20px); /* 3 cards per row, adjust as needed */
+  padding: 20px;
+  box-sizing: border-box;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+  border-radius: 0 0 10px 10px;
+  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px
   }
 
 

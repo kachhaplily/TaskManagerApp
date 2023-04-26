@@ -1,11 +1,10 @@
 
-<div class="togglebtn">
-  <button (click)="toggleForm()" mat-raised-button color="primary">
-    <mat-icon>add</mat-icon> Add Task
+
+<div  class="addtaskdiv">
+  <button class="btnclose" mat-button (click)="onNoClick()">
+    close
   </button>
-</div>
-<div  *ngIf="formVisible" class="addtaskdiv">
-    <h1>Add your Task</h1>
+    <h1>{{data? 'updateTask':'Add Task'}}</h1>
     <form [formGroup]="AddTask" (ngSubmit)="onSubmit()">
       <!-- title-->
       <mat-form-field appearance="fill" class="custom-mat-input">
@@ -33,13 +32,12 @@
         <mat-datepicker #picker></mat-datepicker>
       </mat-form-field>
       <!-- task status  -->
-      <label id="example-radio-group-label">status of task</label>
       <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="status">
         <mat-radio-button class="example-radio-button" *ngFor="let task of taskStatus" [value]="task">
           {{task}}
         </mat-radio-button>
       </mat-radio-group>
-      <button mat-raised-button color="primary" type="submit">Add</button>
+      <button mat-raised-button color="primary" type="submit" value="submit">  {{ data ? 'UpdatTask' : 'AddTask' }}</button>
     </form>
 
 </div>

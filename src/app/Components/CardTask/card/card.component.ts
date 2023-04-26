@@ -10,6 +10,7 @@ import { TaskServiceService } from 'src/app/Services/TaskService/task-service.se
 export class CardComponent {
 @Input() Item!:Item;
 @Output() remove: EventEmitter<number> = new EventEmitter<number>();
+@Output() editTask:EventEmitter<number>=new EventEmitter<number>();
 
 
 constructor(private taskservice: TaskServiceService){}
@@ -24,6 +25,10 @@ getColor(priority: string): string {
 }
 onRemove(taskId: number): void {
   this.remove.emit(taskId);
+}
+onEdit(taskId:number):void{
+  this.editTask.emit(taskId);
+  console.log(taskId);
 }
 
 

@@ -1,25 +1,23 @@
 .searchbar {
   display: flex;
-  justify-content: center;
+  flex: 0 0 calc(25% - 20px); /* 3 cards per row, adjust as needed */
+  margin: 10px;
+  padding: 20px;
   align-items: center;
+  justify-content: right;
+  background: rgb(223, 223, 223);
   gap: 20px;
-  flex-wrap: wrap;
+  align-items: flex-start;
+}
+.searchbar button{
+  background: rgb(3, 95, 107);
+  color: white;
+  padding: 27px 60px;
+  width: 60px;
+  font-size: 20px;
+
 
 }
-
-.search {
-  flex: 1;
-  padding: 4px 0;
-}
-.search mat-form-field{
-  display: block;
-  width: 30vw;
-  padding: 12px 0;
-}
-
-.dropdown {
-  flex: 1;
-}
-.dropdown mat-form-field {
- display: block;
+.searchbar mat-form-field:nth-child(2){
+  width: 100%;
 }

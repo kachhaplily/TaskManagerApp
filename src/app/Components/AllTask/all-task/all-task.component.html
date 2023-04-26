@@ -1,12 +1,11 @@
 <div>
   <app-searchbar (search)="handleSearch($event)"
-  (sortButtonClick)="onSortButtonClick()"
   (sortDropdown)="onOptionSelected($event)"
   (sortDate)="onDateSorting($event)"/>
 </div>
 
 <div class="alltask">
   <mat-card class="example-card" *ngFor="let item of alltask |searchTask:SearchText">
-    <app-card  [Item]="item" (remove)="remove(item.taskId)"></app-card>
+    <app-card  [Item]="item" (remove)="remove($event)" (editTask)="EditTAsk($event) " ></app-card>
   </mat-card>
 </div>

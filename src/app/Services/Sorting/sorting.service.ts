@@ -7,13 +7,7 @@ export class SortingService {
 
   constructor() { }
 
-  sortTasksByDueDate(tasks: any[]): any[] {
-    return tasks.sort((a, b) => {
-      const dueDateA = new Date(a.dueDate);
-      const dueDateB = new Date(b.dueDate);
-      return dueDateA.getTime() - dueDateB.getTime();
-    });
-  }
+
 
   sortTaskbyDate(tasks: any[], selectedOption: string): any[] {
     return tasks.sort((a, b) => {

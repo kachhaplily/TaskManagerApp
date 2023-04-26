@@ -1,63 +1,62 @@
-<section class="background">
-  <div class="Container center-div">
+
+  <div class="containerform">
     <form [formGroup]="RegistrationForm" (ngSubmit)="onSubmit()">
-      <div class="flax-container formdiv">
-        <!-- firstname -->
-        <mat-form-field appearance="outline" class="custom-mat-input">
-          <mat-label>FirstName</mat-label>
-          <input matInput formControlName="firstName">
-          <mat-error
-            *ngIf="RegistrationForm.controls['firstName'].invalid && (RegistrationForm.controls['firstName'].errors||RegistrationForm.controls['firstName'].touched)">
-            <span *ngIf="RegistrationForm.controls['firstName'].errors?.['required']">UserName Required</span>
-            <span *ngIf="RegistrationForm.controls['firstName'].errors?.['firstName']">Invalid Name</span>
-          </mat-error>
-        </mat-form-field>
-        <!-- lasttname -->
-        <mat-form-field appearance="outline">
-          <mat-label>LastName</mat-label>
-          <input matInput formControlName="lastName">
-          <mat-error
-            *ngIf="RegistrationForm.controls['lastName'].invalid && (RegistrationForm.controls['lastName'].errors||RegistrationForm.controls['lastName'].touched)">
-            <span *ngIf="RegistrationForm.controls['lastName'].errors?.['required']">UserName Required</span>
-            <span *ngIf="RegistrationForm.controls['lastName'].errors?.['lastName']">Invalid Name</span>
-          </mat-error>
-        </mat-form-field>
+      <!-- firstname -->
+      <mat-form-field appearance="outline" class="custom-mat-input">
+        <mat-label>FirstName</mat-label>
+        <input matInput formControlName="firstName">
+        <mat-error
+          *ngIf="RegistrationForm.controls['firstName'].invalid && (RegistrationForm.controls['firstName'].errors||RegistrationForm.controls['firstName'].touched)">
+          <span *ngIf="RegistrationForm.controls['firstName'].errors?.['required']">UserName Required</span>
+          <span *ngIf="RegistrationForm.controls['firstName'].errors?.['firstName']">Invalid Name</span>
+        </mat-error>
+      </mat-form-field>
+      <!-- lasttname -->
+      <mat-form-field appearance="outline">
+        <mat-label>LastName</mat-label>
+        <input matInput formControlName="lastName">
+        <mat-error
+          *ngIf="RegistrationForm.controls['lastName'].invalid && (RegistrationForm.controls['lastName'].errors||RegistrationForm.controls['lastName'].touched)">
+          <span *ngIf="RegistrationForm.controls['lastName'].errors?.['required']">UserName Required</span>
+          <span *ngIf="RegistrationForm.controls['lastName'].errors?.['lastName']">Invalid Name</span>
+        </mat-error>
+      </mat-form-field>
 
 
-        <!-- email  -->
-        <mat-form-field appearance="outline">
-          <mat-label>Email Address</mat-label>
-          <input matInput formControlName="email" type="email">
-          <mat-error
-            *ngIf="RegistrationForm.controls['email'].invalid && (RegistrationForm.controls['email'].errors||RegistrationForm.controls['email'].touched)">
-            <span *ngIf="RegistrationForm.controls['email'].errors?.['required']">Email is required.</span>
-            <span *ngIf="RegistrationForm.controls['email'].errors?.['email']">Please enter a valid email
-              address.</span>
-          </mat-error>
-        </mat-form-field>
-        <!-- password  -->
-        <mat-form-field appearance="outline">
-          <mat-label>Password</mat-label>
-          <input matInput formControlName="password" type="password">
-          <mat-error
-            *ngIf="RegistrationForm.controls['password'].invalid && (RegistrationForm.controls['password'].errors || RegistrationForm.controls['password'].touched)">
-            <span *ngIf="RegistrationForm.controls['password'].errors?.['required']">Password Required</span>
-            <span *ngIf="RegistrationForm.controls['password'].errors?.['pattern']">
-              Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special
-              character.
-            </span>
-          </mat-error>
-        </mat-form-field>
-        <div>
-          <button mat-raised-button color="primary" type="submit">Submit</button>
-        </div>
-        <div class="link">
-          <a  (click)="login()">Already have an account?</a>
-        </div>
+      <!-- email  -->
+      <mat-form-field appearance="outline">
+        <mat-label>Email Address</mat-label>
+        <input matInput formControlName="email" type="email">
+        <mat-error
+          *ngIf="RegistrationForm.controls['email'].invalid && (RegistrationForm.controls['email'].errors||RegistrationForm.controls['email'].touched)">
+          <span *ngIf="RegistrationForm.controls['email'].errors?.['required']">Email is required.</span>
+          <span *ngIf="RegistrationForm.controls['email'].errors?.['email']">Please enter a valid email
+            address.</span>
+        </mat-error>
+      </mat-form-field>
+      <!-- password  -->
+      <mat-form-field appearance="outline">
+        <mat-label>Password</mat-label>
+        <input matInput formControlName="password" type="password">
+        <mat-error
+          *ngIf="RegistrationForm.controls['password'].invalid && (RegistrationForm.controls['password'].errors || RegistrationForm.controls['password'].touched)">
+          <span *ngIf="RegistrationForm.controls['password'].errors?.['required']">Password Required</span>
+          <span *ngIf="RegistrationForm.controls['password'].errors?.['pattern']">
+            Password must contain at least one lowercase letter, one uppercase letter, one digit, and one special
+            character.
+          </span>
+        </mat-error>
+      </mat-form-field>
+      <div>
+        <button mat-raised-button color="primary" type="submit">Submit</button>
       </div>
+      <div class="link">
+        <a (click)="login()">Already have an account?</a>
+      </div>
+
     </form>
 
 
   </div>
 
-</section>
+

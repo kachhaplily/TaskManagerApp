@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { SortingService } from 'src/app/Services/Sorting/sorting.service';
 import { TaskServiceService } from 'src/app/Services/TaskService/task-service.service';
+import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { AddtaskComponent } from '../../AddTask/addtask/addtask.component';
 
 @Component({
   selector: 'app-all-task',
@@ -11,7 +13,7 @@ export class AllTaskComponent implements OnInit {
   alltask!: any[]
   SearchText!: string;
 
-  constructor(private taskservice: TaskServiceService, private sortingservice: SortingService) { }
+  constructor(private taskservice: TaskServiceService, private sortingservice: SortingService,public dialog: MatDialog) { }
   ngOnInit(): void {
     this.getdata()
     this.taskservice.Refeshrequired.subscribe(response => this.getdata());
@@ -31,10 +33,7 @@ export class AllTaskComponent implements OnInit {
   handleSearch(searchText: string) {
     this.SearchText = searchText;
   }
-  onSortButtonClick() {
-    const sortedTasks = this.sortingservice.sortTasksByDueDate(this.alltask);
-    this.alltask=sortedTasks;
-  }
+
   onOptionSelected(selectedOption: string){
      this.sortingservice.sortTaskByPriority(this.alltask,selectedOption);
   }
@@ -43,6 +42,17 @@ export class AllTaskComponent implements OnInit {
     this.sortingservice.sortTaskbyDate(this.alltask,selectiondate)
 
   }
+
+  EditTAsk(Taskid: number){
+    const task = this.alltask.find(task => task.taskId === Taskid);
+    console.log(task)
+    this.dialog.open(AddtaskComponent, {
+      width:'100%',
+      data:task,
+     });
+
+  }
+
 
 }
 

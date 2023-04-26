@@ -1,7 +1,7 @@
-.example-spacer {
-  flex: 1 1 auto;
 
+.example-spacer {
+  flex:  1 auto;
 }
 .mat-icon{
-  color: rgb(10, 46, 70);
+  color: rgb(1, 93, 155);
 }

@@ -30,6 +30,8 @@ import { MatMenuModule } from '@angular/material/menu';
 import { SearchbarComponent } from './Components/SearchBar/searchbar/searchbar.component';
 import { CardComponent } from './Components/CardTask/card/card.component';
 import { SearchTaskPipe } from './Pipes/search/search-task.pipe';
+import { ForgotPasswordComponent } from './Components/ForgotPassLink/forgot-password/forgot-password.component';
+import { ResetPasswordComponent } from './Components/resetPassword/reset-password/reset-password.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,6 +47,8 @@ import { SearchTaskPipe } from './Pipes/search/search-task.pipe';
     SearchbarComponent,
     CardComponent,
     SearchTaskPipe,
+    ForgotPasswordComponent,
+    ResetPasswordComponent,
   ],
   imports: [
     BrowserModule,

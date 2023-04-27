@@ -27,6 +27,7 @@ export class RegisterComponent {
    onSubmit(){
     if (this.RegistrationForm.valid) {
       this.userauthservice.postData({ data: this.RegistrationForm.value }).subscribe(r => console.log(r));
+      this.route.navigate([""])
     }
     else {
       console.log("error")

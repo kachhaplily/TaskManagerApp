@@ -11,7 +11,7 @@
   overflow-y: scroll;
 }
 .example-card {
-  flex: 0 0 calc(25% - 20px); /* 3 cards per row, adjust as needed */
+  flex: 0 0 calc(25% - 20px);
   padding: 20px;
   box-sizing: border-box;
   text-overflow: ellipsis;

@@ -20,6 +20,7 @@ export class GuardServiceService {
     this.userauthservice.login(value).subscribe((r)=>{
       localStorage.setItem("token",r.token)
       localStorage.setItem("id",r.id)
+      localStorage.setItem("userName",r.firstName)
 
       this.router.navigate(["dashboard"])
       console.log(r)})

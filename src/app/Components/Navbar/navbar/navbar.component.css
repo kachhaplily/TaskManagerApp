@@ -1,7 +1,38 @@
-
 .example-spacer {
-  flex:  1 auto;
+  display: flex;
+  width: 100%;
+  gap:30px;
+  justify-content: end;
 }
-.mat-icon{
-  color: rgb(1, 93, 155);
+button{
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
+}
+button:hover{
+  background: rgb(33, 95, 87);
+}
+
+
+.userName{
+  display: flex;
+  align-items: center;
+  padding: 2px 4px;
+  border-radius: 3%;
+
+
+}
+.userName span{
+  font-size: 20px;
+  padding: 0 0 0 15px;
+}
+
+
+
+.mat-icon {
+  color: rgb(255, 255, 255);
+
+}
+
+mat-toolbar {
+  background-color: rgb(71, 71, 71);
+  color: white!important;
 }

@@ -35,11 +35,9 @@ mat-toolbar {
   background:#e2e7e9;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   display: flex;
-  overflow: hidden;
-  position: fixed;
+  position: sticky;
   top: 0;
-  width: 100%;
-  z-index: 200!important;
+  z-index: 100;
 }
 mat-toolbar span{
   font-size: 30px;

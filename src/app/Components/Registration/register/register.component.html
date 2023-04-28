@@ -1,5 +1,5 @@
 
-  <div class="containerform">
+  <div class="formContainer" >
     <form [formGroup]="RegistrationForm" (ngSubmit)="onSubmit()">
       <!-- firstname -->
       <mat-form-field appearance="outline" class="custom-mat-input">
@@ -21,7 +21,6 @@
           <span *ngIf="RegistrationForm.controls['lastName'].errors?.['lastName']">Invalid Name</span>
         </mat-error>
       </mat-form-field>
-
 
       <!-- email  -->
       <mat-form-field appearance="outline">
@@ -53,10 +52,6 @@
       <div class="link">
         <a (click)="login()">Already have an account?</a>
       </div>
-
     </form>
-
-
   </div>
-
 

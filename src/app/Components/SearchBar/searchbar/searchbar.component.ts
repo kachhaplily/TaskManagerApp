@@ -40,7 +40,11 @@ export class SearchbarComponent {
   }
   openDialog() {
     this.dialog.open(AddtaskComponent, {
-     width:'100%',
+     width:'30%',
+     position: {
+      top: '3%',
+      left: '0'
+    }
     });
   }
 

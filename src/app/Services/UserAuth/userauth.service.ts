@@ -38,5 +38,15 @@ export class UserauthService {
   }
 
 
+  // // google signin
+  // googleSignIn(token:any):Observable<any>{
+  //   return this.http.post<any>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp?key=[API_KEY]`,{
+  //     postBody:`${token}&providerId=google.com`,
+  //     requestUri:'http://localhost:4200',
+  //     returnIdpCredential:true,
+  //     returnSecureToken:true}
+  //   );
+  // }
+
 
 }

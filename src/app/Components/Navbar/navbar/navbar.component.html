@@ -1,13 +1,12 @@
-<mat-toolbar>
-  <button mat-icon-button class="example-icon">
-    <mat-icon>menu</mat-icon>
+<mat-toolbar >
+  <button  mat-icon-button class="example-icon" (click)="menu()">
+    <mat-icon>{{ showMenu ? 'close' : 'menu' }}</mat-icon>
   </button>
-  <span>Task Management Angular App</span>
-  <div class="example-spacer">
+  <span class="neo-text">Task</span>
+  <div class="example-spacer" id="menu-list">
     <button routerLink='alltask' mat-icon-button >
       <mat-icon>home</mat-icon>
     </button>
-
    <div class="userName">
     <button routerLink='user' mat-icon-button >
       <mat-icon>account_circle</mat-icon>
@@ -17,6 +16,5 @@
     <button (click)="logout()" mat-icon-button>
       <mat-icon>logout</mat-icon>
     </button>
-
   </div>
 </mat-toolbar>

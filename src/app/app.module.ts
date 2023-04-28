@@ -9,7 +9,6 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatInputModule,} from '@angular/material/input';
 import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
-import { RoutingComponent } from './Routes/routing/routing.component';
 import { LoginComponent } from './Components/Login/login/login.component';
 import { TaskDashboardComponent } from './View/DashBoard/task-dashboard/task-dashboard.component';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -32,11 +31,11 @@ import { CardComponent } from './Components/CardTask/card/card.component';
 import { SearchTaskPipe } from './Pipes/search/search-task.pipe';
 import { ForgotPasswordComponent } from './Components/ForgotPassLink/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Components/resetPassword/reset-password/reset-password.component';
+import {MatTooltipModule} from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    RoutingComponent,
     LoginComponent,
     TaskDashboardComponent,
     NavbarComponent,
@@ -49,19 +48,23 @@ import { ResetPasswordComponent } from './Components/resetPassword/reset-passwor
     SearchTaskPipe,
     ForgotPasswordComponent,
     ResetPasswordComponent,
+
   ],
   imports: [
+
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
     MatButtonModule,
-    MatIconModule,MatCardModule,
+    MatIconModule,MatCardModule,MatTooltipModule,
     FormsModule,MatNativeDateModule,MatMenuModule,
     ReactiveFormsModule,MatSelectModule,MatRadioModule,
     HttpClientModule,MatToolbarModule,MatSidenavModule,MatListModule,MatDialogModule,MatDatepickerModule
   ],
-  providers: [],
+  providers: [
+
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

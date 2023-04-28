@@ -11,7 +11,7 @@ import { ResetPasswordComponent } from './Components/resetPassword/reset-passwor
 
 const routes: Routes = [
   { path: "reg", component: RegisterComponent },
-  { path: "", component: LoginComponent },
+  { path:"", component: LoginComponent },
   {path:"reset" ,component:ResetPasswordComponent},
   {
     path: 'dashboard', component: TaskDashboardComponent, canActivate: [AuthGuard],

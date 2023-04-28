@@ -16,7 +16,7 @@ export class ResetPasswordComponent {
   ngOnInit(): void {
     this.passwordForm = this.fb.group({
       newPassword: ['', Validators.compose([ Validators.required, Validators.minLength(6),
-        Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')
+        // Validators.pattern('^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$')
       ])],
       confirmPassword: ['', Validators.required],
       email:localStorage.getItem("resetemail"),

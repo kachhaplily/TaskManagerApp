@@ -1,13 +1,11 @@
 <div class="searchbar">
-
-    <button mat-button (click)="openDialog()">AddTask</button>
-
-
-  <mat-form-field appearance="fill">
+  <!-- opendilog btn  -->
+  <button mat-button (click)="openDialog()">AddTask </button>
+  <!-- search field  -->
+  <mat-form-field appearance="fill"  matTooltip="search task by title,description,and status">
     <input matInput [(ngModel)]="searchQuery" (input)="handleSearchTextChange()" placeholder="Enter search">
   </mat-form-field>
-
-
+  <!-- filter dropdown date -->
   <mat-form-field appearance="fill" [color]="colorControl.value!">
     <mat-label>Date</mat-label>
     <mat-select [(ngModel)]="selectiondate" (selectionChange)="onDateSort($event)">
@@ -16,8 +14,7 @@
     </mat-select>
   </mat-form-field>
 
-
-
+  <!-- filter dropdown priority-->
   <mat-form-field appearance="fill" [color]="colorControl.value!">
     <mat-label>Priority</mat-label>
     <mat-select [(ngModel)]="selectedOption" (selectionChange)="onSortSelect($event)">
@@ -26,5 +23,4 @@
       <mat-option value="High">High</mat-option>
     </mat-select>
   </mat-form-field>
-
 </div>

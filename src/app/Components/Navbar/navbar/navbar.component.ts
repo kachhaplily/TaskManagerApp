@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { GuardServiceService } from 'src/app/Services/GuardService/guard-service.service';
 
@@ -8,15 +8,21 @@ import { GuardServiceService } from 'src/app/Services/GuardService/guard-service
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent {
-username:any
-  constructor(private authgaurd:GuardServiceService,private router:Router){
-    this.username=localStorage.getItem("userName");
+  username: any
+  showMenu :boolean= false;
+  constructor(private authgaurd: GuardServiceService, private router: Router) {
+    this.username = localStorage.getItem("userName");
     console.log(this.username)
   }
 
 
-  logout(){
-      this.authgaurd.logout()
+  logout() {
+    this.authgaurd.logout()
+  }
+  menu() {
+    this.showMenu = true;
+    alert("hii")
+
   }
 
 }

@@ -1,5 +1,8 @@
+
+
+
 mat-card-title {
-  font-size: 14px;
+  font-size: 30px;
   letter-spacing: 2px;
   font-family: 'Arial Black', sans-serif;
 
@@ -15,17 +18,10 @@ mat-card-title {
 }
 
 mat-card-title {
-  font-size: 20px;
-  font-weight: 500;
+  font-size: 30px;
 }
 
-.circle {
-  height: 12px;
-  width: 12px;
-  border-radius: 50%;
-  margin: 2px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
-}
+
 
 .iconlabel {
   display: flex;
@@ -33,6 +29,12 @@ mat-card-title {
   justify-content: space-between;
   padding: 5px;
 }
+
+.iconlabel  mat-icon{
+  font-size: 20px;
+}
+
+
 
 .date {
   display: flex;
@@ -43,21 +45,29 @@ mat-card-title {
 .remove {
   position: absolute;
   top: 0;
-  right: 0;
+  left: 0;
+
+
+}
+.remove mat-icon{
+font-size: 20px;
+color: crimson;
+font-weight: 700;
 }
 
 .edit {
   position: absolute;
-  width: 100%;
-  left: 0;
+  right: 0;
   bottom: 0;
-  color: rgb(255, 255, 255);
-  background: rgb(56, 56, 52);
+  color: rgb(22, 22, 22);
   font-size: 20px;
-  border-radius: 0 0 10px 10px;
+  padding: 15px 0 0 10px;
+  border-radius: 99% 1% 70% 30% / 96% 100% 0% 4% ;
+  box-shadow: inset 5px 5px 10px #c9c9c9,
+              inset -5px -5px 10px #ffffff;
+
 }
 .edit:hover{
-  background: rgb(236, 236, 236);
   color: black;
 }
 

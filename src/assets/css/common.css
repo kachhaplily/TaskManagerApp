@@ -1,22 +1,30 @@
 
-.containerform{
+.formContainer{
+  text-align: center;
   max-width: 600px;
   margin: auto;
   top: 50%;
-  text-align: center;
   transform: translateY(50%);
-  box-shadow: rgba(14, 30, 37, 0.12) 0px 2px 4px 0px, rgba(14, 30, 37, 0.32) 0px 2px 16px 0px;
-
+  box-shadow: 32px 32px 64px #bec2c4,
+  -32px -32px 64px #ffffff;
 }
-.containerform form{
+.neo-text{
+  font-weight: bold;
+  color: #b3b3b3;
+  text-shadow:
+    -1px -1px 0 #ffffff,
+    1px 1px 0 #d4f6ff;
+}
+.formContainer form{
   display: flex;
   flex-direction: column;
   padding: 20px;
+
 }
 .link{
   cursor: pointer;
   color: rgb(0, 0, 0);
-  padding: 10px;
 }
+
 
 

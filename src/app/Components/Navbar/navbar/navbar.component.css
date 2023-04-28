@@ -1,38 +1,47 @@
 .example-spacer {
   display: flex;
   width: 100%;
-  gap:30px;
   justify-content: end;
+  gap: 20px;
 }
 button{
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset !important;
+  background: #e2e7e9;
+  box-shadow: inset -5px 5px 10px #c9c9c9,
+            inset 5px -5px 10px #ffffff;
 }
-button:hover{
-  background: rgb(33, 95, 87);
-}
-
-
 .userName{
   display: flex;
   align-items: center;
   padding: 2px 4px;
   border-radius: 3%;
 
-
 }
-.userName span{
+.userName span {
   font-size: 20px;
   padding: 0 0 0 15px;
+  color: rgb(33, 95, 87);
+
 }
 
 
 
 .mat-icon {
-  color: rgb(255, 255, 255);
+  color: rgb(33, 95, 87);
 
 }
 
 mat-toolbar {
-  background-color: rgb(71, 71, 71);
   color: white!important;
+  background:#e2e7e9;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  display: flex;
+  overflow: hidden;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 200!important;
 }
+mat-toolbar span{
+  font-size: 30px;
+}
+

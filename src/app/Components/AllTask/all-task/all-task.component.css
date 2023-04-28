@@ -1,27 +1,20 @@
-
-.alltask{
-  max-width: 1500px;
+.alltask {
+  max-width: 1200px;
   margin: auto;
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 20px;
-  height: 72vh;
-  overflow-y: scroll;
+  columns: 3 300px;
+  column-gap: 12px;
+  font-size: 1.2rem;
 }
-.example-card {
-  flex: 0 0 calc(25% - 20px);
+
+
+.example-card{
+  width: 100%;
   padding: 20px;
-  box-sizing: border-box;
-  text-overflow: ellipsis;
-  white-space: nowrap;
-  overflow: hidden;
-  border-radius: 0 0 10px 10px;
-  box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px, rgba(60, 64, 67, 0.15) 0px 2px 6px 2px
-  }
-
-
-
-
-
+  margin: 0 0 2rem ;
+  display: inline-block; /* stops block being split across columns. Could use break-inside: avoid for modern browsers; */
+  break-inside: avoid;
+  border-radius: 10px;
+  background: #e2e7e9;
+  box-shadow: 32px 32px 64px #bec2c4,
+    -32px -32px 64px #ffffff;
+}

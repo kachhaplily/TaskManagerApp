@@ -7,7 +7,8 @@ import { AddtaskComponent } from '../../AddTask/addtask/addtask.component';
 @Component({
   selector: 'app-all-task',
   templateUrl: './all-task.component.html',
-  styleUrls: ['./all-task.component.css']
+  styleUrls: ['./all-task.component.css'],
+
 })
 export class AllTaskComponent implements OnInit {
   alltask!: any[]
@@ -47,8 +48,12 @@ export class AllTaskComponent implements OnInit {
     const task = this.alltask.find(task => task.taskId === Taskid);
     console.log(task)
     this.dialog.open(AddtaskComponent, {
-      width:'100%',
+      width:'30%',
       data:task,
+     position: {
+      top: '3%',
+      left: '0'
+    }
      });
 
   }

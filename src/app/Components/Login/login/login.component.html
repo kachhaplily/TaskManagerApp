@@ -1,8 +1,8 @@
-<div class="containerform">
-  <!-- <h1 class="mat-h1">login</h1> -->
+<div class="formContainer">
+  <h1 class="neo-text">Login</h1>
   <form [formGroup]="Logindata" (ngSubmit)="onSubmit()" class="my-theme">
     <!-- email  -->
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="fill">
       <mat-label>Email Address</mat-label>
       <input matInput formControlName="email" type="email">
       <mat-error
@@ -14,7 +14,7 @@
     </mat-form-field>
     <!-- password  -->
 
-    <mat-form-field appearance="outline">
+    <mat-form-field appearance="fill">
       <mat-label>Password</mat-label>
       <input matInput formControlName="password" type="password">
       <mat-error
@@ -28,8 +28,8 @@
     </mat-form-field>
     <button mat-raised-button color="primary" type="submit">Login</button>
     <!-- registraion-link  -->
-    <a class="link" (click)="registration()">create an accounter</a>
-    <a mat-button (click)="openEmailDialog()">Forgot Password?</a>
+    <a class="link" (click)="registration()">Create An Accounter</a>
+    <a class="link" (click)="openEmailDialog()">Forgot Password?</a>
 </form>
 
 

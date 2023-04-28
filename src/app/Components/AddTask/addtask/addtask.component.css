@@ -1,14 +1,27 @@
-.addtaskdiv{
-  top: 5%;
+.addtaskdiv {
+
   padding: 20px;
   border-radius: 12px;
   text-align: center;
-  box-shadow: 0 1px 1px rgba(0,0,0,0.12), 0 2px 2px rgba(0,0,0,0.12), 0 4px 4px rgba(0,0,0,0.12), 0 8px 8px rgba(0,0,0,0.12), 0 16px 16px rgba(0,0,0,0.12);
+  border-radius: 10px;
+  background: #e2e7e9;
+  box-shadow: 32px 32px 64px #bec2c4,
+    -32px -32px 64px #ffffff;
 }
-mat-form-field{
+.addtaskdiv h1{
+  font-size: 30px;
+  font-weight: bold;
+  color: #b3b3b3;
+  text-shadow:
+    -1px -1px 0 #ffffff,
+    1px 1px 0 #d4f6ff;
+}
+
+mat-form-field {
   display: block;
 
 }
+
 .example-radio-group {
   display: flex;
   flex-direction: row;
@@ -22,18 +35,17 @@ mat-form-field{
 
 }
 
-/* Increase specificity of custom CSS class */
-.mat-form-field .custom-mat-input .mat-form-field-appearance-fill .mat-form-field-flex .mat-form-field-infix {
-  background-color: #a51715 !important; /* Add !important to override other styles */
-}
-.btnclose{
+
+
+.btnclose {
   position: absolute;
   right: 0;
   top: 0;
 }
+
 .btnclose {
- font-size: 20px;
-font-weight: 600;
-color: rgb(0, 0, 0);
-background: rgb(255, 0, 13);
+  font-size: 20px;
+  font-weight: 600;
+  color: rgb(0, 0, 0);
+  background: rgb(255, 0, 13);
 }

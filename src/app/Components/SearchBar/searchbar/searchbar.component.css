@@ -1,23 +1,37 @@
 .searchbar {
+  max-width: 1200px;
+  margin:auto;
   display: flex;
-  flex: 0 0 calc(25% - 20px); /* 3 cards per row, adjust as needed */
-  margin: 10px;
-  padding: 20px;
+  flex-wrap: wrap;
+  padding: 4px;
+  gap: 5px;
   align-items: center;
   justify-content: right;
-  background: rgb(223, 223, 223);
-  gap: 20px;
   align-items: flex-start;
+  background-color: transparent;
 }
-.searchbar button{
-  background: rgb(3, 95, 107);
-  color: white;
-  padding: 27px 60px;
+.searchbar button {
+  color: rgb(33, 95, 87);
+  padding: 12px 60px;
   width: 60px;
   font-size: 20px;
-
-
+  font-weight: bolder;
+  background: linear-gradient(225deg, #e6e6e6, #ffffff);
+  box-shadow: -5px 5px 13px #c9c9c9,
+    5px -5px 13px #ffffff;
 }
-.searchbar mat-form-field:nth-child(2){
+.searchbar button:hover{
+  color: white;
+  background: linear-gradient(225deg, #21564e, #28665d);
+  box-shadow:  -5px 5px 13px #1d4b45,
+             5px -5px 13px #feffff;
+}
+
+.searchbar mat-form-field:nth-child(2) {
   width: 100%;
+  background: inherit;
+
 }
+
+
+

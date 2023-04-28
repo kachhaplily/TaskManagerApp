@@ -30,6 +30,11 @@
         <mat-hint>MM/DD/YYYY</mat-hint>
         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
         <mat-datepicker #picker></mat-datepicker>
+        <mat-error
+        *ngIf="AddTask.controls['dueDate'].invalid && (AddTask.controls['dueDate'].errors||AddTask.controls['dueDate'].touched)">
+        <span *ngIf="AddTask.controls['dueDate'].errors?.['required']">Due Date Required</span>
+        <span *ngIf="AddTask.controls['dueDate'].errors?.['validateDate']">You enter Past date</span>
+      </mat-error>
       </mat-form-field>
       <!-- task status  -->
       <mat-radio-group aria-labelledby="example-radio-group-label" class="example-radio-group" formControlName="status">

@@ -6,25 +6,21 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class ForGotPassServiceService {
-
-
-
+  baseurl='https://localhost:7070/api/Auth';
+  private readonly headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('Accept', 'application/json');
 
   constructor(private http: HttpClient) { }
    // forgot password link send
    forgotpassword(email:string):Observable<any>{
-    const headers = new HttpHeaders()
-    .set('Content-Type', 'application/json')
-    .set('Accept', 'application/json');
-    return this.http.post<any>(`https://localhost:7070/api/Auth/send-reset-email/${email}`,{headers});
+
+    return this.http.post<any>(`${this.baseurl}/send-reset-email/${email}`,{headers: this.headers});
   }
 
   // forgot password reset
   ResetPassword(data:any):Observable<any>{
-    const headers = new HttpHeaders()
-    .set('Content-Type', 'application/json')
-    .set('Accept', 'application/json');
-    return this.http.post<any>(`https://localhost:7070/api/Auth/reset-password`,data,{headers});
+    return this.http.post<any>(`${this.baseurl}/reset-password`,data,{headers:this.headers});
   }
 }
 

@@ -14,7 +14,6 @@ button{
   align-items: center;
   padding: 2px 4px;
   border-radius: 3%;
-
 }
 .userName span {
   font-size: 20px;
@@ -22,13 +21,10 @@ button{
   color: rgb(33, 95, 87);
 
 }
-
-
-
 .mat-icon {
   color: rgb(33, 95, 87);
-
 }
+
 
 mat-toolbar {
   color: white!important;

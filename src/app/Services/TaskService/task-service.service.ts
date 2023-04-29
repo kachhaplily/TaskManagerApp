@@ -6,8 +6,15 @@ import { Observable, Subject, tap } from 'rxjs';
   providedIn: 'root'
 })
 export class TaskServiceService {
+  baseurl='https://localhost:7070/api/Task';
   token = localStorage.getItem("token");
   userid = Number(localStorage.getItem("id"));
+
+  private readonly headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('Accept', 'application/json')
+    .set('Authorization', `bearer ${this.token}`)
+
 
   constructor(private http: HttpClient) {
   }
@@ -21,11 +28,7 @@ export class TaskServiceService {
   // addtask
 
   addTask(data: any): Observable<any> {
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Accept', 'application/json')
-      .set('Authorization', `bearer ${this.token}`);
-    return this.http.post<any>(`https://localhost:7070/api/Task/Task?userId=${this.userid}`, data, { headers: headers })
+    return this.http.post<any>(`${this.baseurl}/register?userId=${this.userid}`, data, { headers: this.headers })
       .pipe(
         tap(() => {
           this.Refeshrequired.next();
@@ -33,25 +36,17 @@ export class TaskServiceService {
       );
   }
 
-
   // gettask
   getTask(): Observable<any> {
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Accept', 'application/json')
-      .set('Authorization', `bearer ${this.token}`);
-    return this.http.get<any>(`https://localhost:7070/api/Task/task/${this.userid}`, { headers: headers })
+
+    return this.http.get<any>(`${this.baseurl}/alltask/${this.userid}`, { headers: this.headers })
       ;
   }
 
 
   // delete task
   removeTask(taskid: number): Observable<any> {
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Accept', 'application/json')
-      .set('Authorization', `bearer ${this.token}`);
-    return this.http.delete<any>(`https://localhost:7070/api/Task/${this.userid}/tasks/${taskid}`, { headers: headers }).pipe(
+    return this.http.delete<any>(`${this.baseurl}/delete/${this.userid},${taskid}`, { headers: this.headers }).pipe(
       tap(() => {
         this.Refeshrequired.next();
       })
@@ -59,12 +54,8 @@ export class TaskServiceService {
   }
 
   // update task
-  updateTask(taskid: number,data: any): Observable<any> {
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Accept','application/json')
-      .set('Authorization', `bearer ${this.token}`);
-    return this.http.put<any>(`https://localhost:7070/api/Task/updateTask/${this.userid}/tasks/${taskid}`,data, { headers: headers }).pipe(
+  updateTask(taskid: number, data: any): Observable<any> {
+    return this.http.put<any>(`${this.baseurl}/updateTask/${this.userid},${taskid}`, data, { headers: this.headers }).pipe(
       tap(() => {
         this.Refeshrequired.next();
       })

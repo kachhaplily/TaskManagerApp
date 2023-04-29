@@ -48,11 +48,11 @@ export class AllTaskComponent implements OnInit {
     const task = this.alltask.find(task => task.taskId === Taskid);
     console.log(task)
     this.dialog.open(AddtaskComponent, {
-      width:'30%',
+      width:'500px',
       data:task,
-     position: {
-      top: '3%',
-      left: '0'
+      position: {
+      top: '4%',
+      left:'0'
     }
      });
 

@@ -6,47 +6,33 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class UserauthService {
-  apiurl = "https://localhost:7070/api/Auth/register";
-  userid=localStorage.getItem("id");
-  token=localStorage.getItem("token");
-  constructor(private http: HttpClient) { }
+  private readonly baseUrl = "https://localhost:7070/api/Auth";
+  private readonly registerUrl = `${this.baseUrl}/register`;
+  private readonly loginUrl = `${this.baseUrl}/login`;
+  private readonly userUrl = (id: Number) => `${this.baseUrl}/${id}`;
 
-  // add data into database [post]
-
-  postData({ data }: { data: any; }): Observable<any> {
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Accept', 'application/json');
-    return this.http.post<any>(this.apiurl ,data, { headers: headers });
-  }
-  // login or authanticate
-
-  login(data:any): Observable<any>{
-    const headers = new HttpHeaders()
+  private readonly headers = new HttpHeaders()
     .set('Content-Type', 'application/json')
     .set('Accept', 'application/json');
-  return this.http.post<any>("https://localhost:7070/api/Auth/login" ,data, { headers: headers });
+
+  private readonly token = localStorage.getItem("token");
+  private readonly userId =Number(localStorage.getItem("id"));
+
+  constructor(private readonly http: HttpClient) { }
+
+  // add data into database [post]
+  postData(data: any): Observable<any> {
+    return this.http.post<any>(this.registerUrl, data, { headers: this.headers });
   }
+
+  // login or authenticate
+  login(data: any): Observable<any>{
+    return this.http.post<any>(this.loginUrl, data, { headers: this.headers });
+  }
+
   // user update
-
-  userUpdate(data:any): Observable<any> {
-    const headers = new HttpHeaders()
-      .set('Content-Type', 'application/json')
-      .set('Accept', 'application/json')
-      .set('Authorization', `bearer ${this.token}`);
-    return this.http.put<any>(`https://localhost:7070/api/Auth/${this.userid}`,data, { headers: headers });
+  userUpdate(data: any): Observable<any> {
+    const authHeaders = this.headers.set('Authorization', `bearer ${this.token}`);
+    return this.http.put<any>(this.userUrl(this.userId), data, { headers: authHeaders });
   }
-
-
-  // // google signin
-  // googleSignIn(token:any):Observable<any>{
-  //   return this.http.post<any>(`https://identitytoolkit.googleapis.com/v1/accounts:signInWithIdp?key=[API_KEY]`,{
-  //     postBody:`${token}&providerId=google.com`,
-  //     requestUri:'http://localhost:4200',
-  //     returnIdpCredential:true,
-  //     returnSecureToken:true}
-  //   );
-  // }
-
-
 }

@@ -22,7 +22,7 @@ export class UserauthService {
 
   // add data into database [post]
   postData(data: any): Observable<any> {
-    return this.http.post<any>(this.registerUrl, data, { headers: this.headers });
+    return this.http.post<any>(this.registerUrl,data,{ headers: this.headers});
   }
 
   // login or authenticate

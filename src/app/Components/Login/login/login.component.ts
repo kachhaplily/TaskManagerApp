@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { UserauthService } from '../../../Services/UserAuth/userauth.service';
 import { Router } from '@angular/router';
 import { GuardServiceService } from 'src/app/Services/GuardService/guard-service.service';
 import { MatDialog } from '@angular/material/dialog';
@@ -16,7 +15,7 @@ export class LoginComponent {
 
 
   constructor(private formBuilder: FormBuilder,
-    private userauthservice: UserauthService,
+
     private route: Router,
     private guardService: GuardServiceService,
     public dialog: MatDialog) {
@@ -57,5 +56,7 @@ export class LoginComponent {
       console.log('Email: ', result);
     });
   }
+
+
 
 }

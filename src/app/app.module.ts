@@ -32,6 +32,7 @@ import { SearchTaskPipe } from './Pipes/search/search-task.pipe';
 import { ForgotPasswordComponent } from './Components/ForgotPassLink/forgot-password/forgot-password.component';
 import { ResetPasswordComponent } from './Components/resetPassword/reset-password/reset-password.component';
 import {MatTooltipModule} from '@angular/material/tooltip';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +57,7 @@ import {MatTooltipModule} from '@angular/material/tooltip';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatButtonModule,
+    MatButtonModule,MatSnackBarModule,
     MatIconModule,MatCardModule,MatTooltipModule,
     FormsModule,MatNativeDateModule,MatMenuModule,
     ReactiveFormsModule,MatSelectModule,MatRadioModule,
